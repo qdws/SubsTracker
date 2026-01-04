@@ -2,9 +2,18 @@ name = "subscription-manager"
 main = "index.js"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+preview_urls = true
+
 
 [env.production]
 name = "subscription-manager"
+
+routes = [
+  { pattern = "dingyue.qdws.dpdns.org", zone_name = "qdws.dpdns.org" }
+]
+workers_dev = false
+preview_urls = false
 
 [env.staging]
 name = "dnsdingyue"
@@ -13,7 +22,7 @@ name = "dnsdingyue"
 [[kv_namespaces]]
 binding = "SUBSCRIPTIONS_KV"
 preview_id = "SUBSCRIPTIONS_KV"
-id = "env.SUBSCRIPTIONS_KV "
+id = "14f54f443b1847099430d6d057e08268"
 
 # 定时任务配置 - 每天早上8点检查
 [triggers]
