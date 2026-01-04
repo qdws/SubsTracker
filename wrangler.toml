@@ -13,7 +13,7 @@ name = "dnsdingyue"
 [[kv_namespaces]]
 binding = "SUBSCRIPTIONS_KV"
 preview_id = "SUBSCRIPTIONS_KV"
-id = "your-production-kv-namespace-id"
+id = "env.SUBSCRIPTIONS_KV "
 
 # 定时任务配置 - 每天早上8点检查
 [triggers]
